@@ -1,0 +1,81 @@
+Functional requirements
+Category
+Description
+Back officers
+Login into the system on a computer as an officer.
+CRUD function:
+Back officers can create, read, update and delete (CRUD function) information (name, age, date joined, deployed area, assigned vehicle, assigned MCP, availability status, ) of collectors and janitors.
+Back officers can create, read, update, and delete information of schedules:
+View schedules on a calendar (people, vehicles)
+Create schedules on the calendar, assign people, vehicles, locations, routes to a schedule. 
+Automatically prevent overlapping schedules. 
+A schedule can be in draft mode or be officially published to employees.
+Sorting functions:
+Staff information by name, age, date joined, availability status.
+Vehicles by weight, capacity, fuel consumption.
+MCPs by capacity, current status, location.
+Searching for a vehicle, a person, or an MCP by ID and name.
+Chat with any employee/group of employees or everyone via text messages.
+Assign functions:
+Assign a collector to a vehicle by choosing the vehicle ID from a drop-down menu in the task assignment interface.
+Assign a vehicle to an MCP by choosing the MCP id from a dropdown menu.
+Assign janitor(s) to a MCP by choosing the MCP ID from a drop-down menu.
+Update assignments whenever a data entry is deleted from a table.
+Plan routes from a starting point to multiple points on a mapping interface, the most efficient route is automatically selected. Routes can be assigned to vehicles.
+Collectors
+Log in as a Collector on the smartphone app.
+View and modify personal information.
+Check map for assigned routes and MCPs (information about MCPs is included into the map).
+Change the status of those MCPs to not full after collecting trash from them.
+Check the schedule table to view schedules and tasks (which route to take, which vehicle to operate on).
+Chat with anyone via text messages, send distress signals to officers.
+Scan a QR code in the allocated vehicle to check in.
+Janitors
+Log in as a Janitor on the smartphone app.
+View and modify personal information.
+Check the schedule table to view schedules and tasks (which route to take, which MCP, stroller to work with).
+Check map for assigned routes and MCPs (information about MCPs is included into the map).
+Janitors can update the status of MCPs (not full or full) when they bring trash to them.
+Scan a QR code at their troller’s concentration point to check in/ check out.
+Chat with anyone via text messages. send distress signals to officers.
+
+
+Non-functional requirements:
+Category
+Description
+Performance
+Communication between back-officers, janitors, and collectors is in a real-time manner, with at most 1000 ms delay under Vietnam’s standard 4G/LTE connection speed. This includes messaging and general announcements made by back-officers.
+New tasks assigned to collectors and janitors should be received and rendered on the mobile UI within at most 1000 ms.
+Upon app refresh by a pull-down action or button’s call-back, the time taken should be at most 1000 ms for data to reload and render.
+Navigating to different pages on both desktop and mobile apps should re-render the UI in a maximum 300 ms delay.
+The system can handle 100 simultaneous requests at a time, and 5000 requests on average per day.
+The system’s routing algorithm should return the results within at most 2000 ms.
+Scalability
+The system can handle up to 10000 MCPs in 5 years’ time.
+Reliability and recoverability
+The probability of failures that require application restart should be less than 1%.
+The system should support a recovery point objective of 1 hour.
+The system should support a recovery time objective of 5 minutes.
+Security
+The system should encrypt data in transit using HTTPS and logically isolate customer data.
+The system should log employee access to systems that contain personal data.
+Usability
+Ease of navigation: at most 6 items under the navigation drawer in the desktop-view central dashboard for back officers and at most 4 items under the bottom navigation bar for the mobile-view screen for janitors and collectors. All mentioned items should have descriptive labels and icons for intuitiveness.
+At most 5 clicks/taps to use a certain feature in each UI page.
+Back-officers, collectors, and janitors can grasp basic control of the system (key features and navigation) within 10 minutes of training.
+Availability
+The percentage that the system is accessible to system users on a work day is no less than 95%.
+Localization
+Language options: Vietnamese by default, with the ability to switch to English.
+In-app measurements: correspond to SI units as follows:
+Distance: kilometers.
+Weight: kilograms.
+Volume: cubic meters.
+Date-time format corresponds to Vietnamese standards.
+Date: dd/mm/yyyy.
+Time: GMT+7 time zone, formatted as hh::mm::ss on the 24-hour clock time.
+Interoperability
+On the back officer’s end, the system should work effectively on desktop and laptop machines running Windows, MacOS, and Linux operating systems.
+On the collectors and janitors’ end, the system should work effectively on mobile phones running Android and iOS operating systems via native applications. 
+The UWC 2.0 system should be interoperable with the existing UWC 1.0 system.
+
