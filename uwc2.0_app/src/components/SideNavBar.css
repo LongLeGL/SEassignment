@@ -1,0 +1,8 @@
+.SideNavBar {
+    height: 100vh;
+    width: 30vh;
+    margin-right: 0;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,51 @@
+.AppName {
+    margin: auto;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+img {
+    width: 3em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.InputContainer {
+    margin: auto;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 50vw;
+    height: 3em;
+    border-color: aliceblue;
+    border-radius: 1em;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0 2rem 0.5rem 0.5rem
+}
+
+.InputContainer label {
+    font-weight: 500;
+}
+
+.InputContainer input {
+    height: 5em;
+    border-style: none;
+    outline: none;
+}
+
+.LoginButton {
+    margin: auto;
+    margin-top: 1em;
+    text-align: center;
+}
