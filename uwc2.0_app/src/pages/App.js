@@ -9,6 +9,7 @@ import AccountManage from './AccountManage';
 import SideNavBar from '../components/SideNavBar';
 import UpperBar from '../components/UpperBar';
 import HomePage from './HomePage';
+import CreateTask from './CreateTask';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/MCPManage" element={<MCPManage/>} exact='True' />
             <Route path="/VehicleManage" element={<VehicleManage/>} exact='True' />
             <Route path="/AccountManage" element={<AccountManage/>} exact='True' />
+            <Route path="/CreateTask" element={<CreateTask/>} exact='True' />
           </Routes>
         </div>
       </div>
