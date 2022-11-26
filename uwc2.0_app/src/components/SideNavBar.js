@@ -1,31 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './SideNavBar.css'
+import '../pages/global.css';
+import './SideNavBar.css';
+import logo from '../img/logo.png';
 
 function SideNavBar() {
     return (
-      <React.Fragment>
-				<div className='SideNavBar'>
+			<div className='SideNavBar'>
+				<div className='UpperSideNav'>
+					<div className='AppName'>
+						<img src={logo} alt='logo'/>
+						<div>UWC 2.0</div>
+					</div>
+
+					<button>Tạo công việc</button>
+
 					<Link to="/Home">
-						Trang chu
+						Trang chủ
 					</Link>
 					<Link to="/PersonnelManage">
-						Nhan vien
+						Quản lí nhân viên
 					</Link>
 					<Link to="/MCPManage">
-						Diem thu gom
+						Quản lí điểm thu gom
 					</Link>
 					<Link to="/VehicleManage">
-						Phuong tien
-					</Link>
-					<Link to="/AccountManage">
-						<button>Tai khoan</button>
-					</Link>
-					<Link to="/">
-						<button>Dang xuat</button>
+						Quản lí phương tiện
 					</Link>
 				</div>
-			</React.Fragment>
+
+				<div className='LowerSideNav'>
+					<Link to="/AccountManage">
+						<button>Quản lí tài khoản</button>
+					</Link>
+					<Link to="/">
+						<button>Đăng xuất</button>
+					</Link>
+				</div>
+			</div>
     );
 }
 

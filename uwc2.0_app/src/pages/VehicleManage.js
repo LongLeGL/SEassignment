@@ -1,11 +1,13 @@
+import './global.css'
 import './VehicleManage.css'
 import React from 'react';
 
 function VehicleManage() {
 	return (
-		<React.Fragment>
+		<div className='VehicleManage'>
 			<div>Vehicle Page content</div>
-		</React.Fragment> 
+		</div>
+		
 	);
 }
 

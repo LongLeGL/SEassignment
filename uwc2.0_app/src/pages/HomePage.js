@@ -1,11 +1,14 @@
+import './global.css'
 import './HomePage.css'
 import React from 'react';
 
 function HomePage() {
 	return (
-		<React.Fragment>
-			<div>Home page</div>
-		</React.Fragment> 
+		<div className='HomePage'>
+			
+				<div>Home page</div>
+				<button className='btn'>HPB</button>
+		</div>
 	);
 }
 

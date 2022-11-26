@@ -1,10 +1,12 @@
+import './global.css'
+import './AccountManage.css';
 import React from 'react';
 
 function AccountManage() {
 	return (
-		<React.Fragment>
+		<div className='AccountManage'>
 			<div>Page content</div>
-		</React.Fragment> 
+		</div>
 	);
 }
 

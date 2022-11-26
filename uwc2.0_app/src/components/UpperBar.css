@@ -1,6 +1,9 @@
 .UpperBar{
-    width: 100vw;
+    width: 85vw;
     height: 10vh;
-    background-color: aqua;
+    background-color: white;
     display: flex;
+    border-width: 1px;
+    border-color: var(--border_gray);
+    border-bottom-style: solid;
 }
