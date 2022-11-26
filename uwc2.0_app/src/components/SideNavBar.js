@@ -13,7 +13,9 @@ function SideNavBar() {
 						<div>UWC 2.0</div>
 					</div>
 
-					<button>Tạo công việc</button>
+					<Link to="/CreateTask">
+						<button>Tạo công việc</button>
+					</Link>
 
 					<Link to="/Home">
 						Trang chủ
