@@ -1,10 +1,11 @@
 import React from 'react';
 import './UpperBar.css'
+import '../pages/global.css'
 
 function UpperBar () {
 	return (
 		<div className='UpperBar'>
-				UpperBar
+				Chao xìn
 		</div>
 	);
 }

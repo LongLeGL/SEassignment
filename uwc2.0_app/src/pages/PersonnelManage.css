@@ -1,0 +1,9 @@
+.PersonnelManage{
+    background-color: var(--bg_gray);
+    width: 85vw;
+    height: 90vh;
+}
+
+.btn {
+    background-color: brown;
+}

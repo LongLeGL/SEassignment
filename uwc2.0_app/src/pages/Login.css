@@ -1,20 +1,30 @@
+.LoginPage {
+    margin-top: -1em;
+    width: 100vw;
+    height: 80vh;
+    padding-top: 20vh;
+    background-color: var(--bg_gray);
+}
+
 .AppName {
+    width: fit-content;
     margin: auto;
-    margin-top: 10rem;
-    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    font-size: 1.5em;
-    font-weight: 600;
 }
 
-img {
+.AppName img {
     width: 3em;
+}
+.AppName div {
+    font-size: 2em;
+    font-weight: 700;
 }
 
 form {
+    margin-top: 2em;
     display: flex;
     flex-direction: column;
 }
@@ -28,10 +38,10 @@ form {
     width: 50vw;
     height: 3em;
     border-color: aliceblue;
-    border-radius: 1em;
+    border-radius: 8px;
     border-width: 2px;
     border-style: solid;
-    padding: 0 2rem 0.5rem 0.5rem
+    padding: 0.5rem 2rem 0.5rem 0.5rem
 }
 
 .InputContainer label {
