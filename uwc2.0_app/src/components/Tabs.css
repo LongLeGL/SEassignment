@@ -1,7 +1,8 @@
 .tab-list-item {
-    width: 12vw;
-    padding: 0.5rem 0.75rem;
-    margin: 0.5em 0em;
+    width: 11vw;
+    padding: 0.5rem 0.65rem;
+    margin: 0.5em 0.3em;
+    border-radius: 4px;
 }
   
 .tab-list-active {
