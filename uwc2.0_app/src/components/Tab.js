@@ -13,7 +13,8 @@ class Tab extends Component {
 			props: {
 				activeTab,
 				label,
-				path
+				path,
+				icon
 			},
 		} = this;
 
@@ -24,14 +25,15 @@ class Tab extends Component {
 		}
 
 		return (
+			<Link to={path}>
 			<div
 				className={className}
 				onClick={onClick}
 			>
-				<Link to={path}>
-					{label}
-				</Link>
+				<img src={icon} alt={path}/>
+				{label}
 			</div>
+			</Link>
 		);
 	}
 }

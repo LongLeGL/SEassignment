@@ -31,7 +31,7 @@ class Tabs extends Component {
             <div className="tab-list">
                 {children.map((child) => 
                 {
-                    const { label, path } = child.props;
+                    const { label, path, icon} = child.props;
                     if (label === '_separator'){
                         return(<div className='Separator' />)
                     }
@@ -42,6 +42,7 @@ class Tabs extends Component {
                         label={label}
                         onClick={onClickTabItem}
                         path = {path}
+                        icon = {icon}
                     />
                     );
                 })
