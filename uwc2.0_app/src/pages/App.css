@@ -1,8 +1,8 @@
-.HomeContainer{
+.HomeContainer {
     display: flex;
     margin: 0 0;
 }
 
-.MainContent{
+.MainContent {
     width: 70vw;
 }
