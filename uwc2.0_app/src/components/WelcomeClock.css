@@ -1,0 +1,14 @@
+.UpbarWelcome{
+    margin-top: 0.8rem;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.UpbarClock {
+    margin-top: 0.2rem;
+    margin-left: 2rem;
+    font-size: 0.8em;
+    color: var(--text_gray);
+}
