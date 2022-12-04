@@ -4,10 +4,6 @@
   height: 89.9vh;
 }
 
-.btn {
-  background-color: brown;
-}
-
 .gridjs-footer button,
 .gridjs-head button {
   background-color: transparent;
@@ -335,4 +331,13 @@ th.gridjs-th:last-child {
 .gridjs-resizable:hover {
   background-color: #9bc2f7;
   cursor: ew-resize;
+}
+
+.gridjs-container {
+  width: 80vw;
+  padding-left: 3vw;
+}
+.gridjs-container table {
+  margin:auto;
+  width: 80vw
 }
