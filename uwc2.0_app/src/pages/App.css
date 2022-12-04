@@ -74,22 +74,32 @@
     position: absolute;
     margin-top: 10vh;
     margin-left: 74.6vw;
+    height: 88vh;
     width: 0;
-    opacity: 0;
+    visibility: hidden;
+    background-color: black;
+    overflow: hidden;
+}
+.ChatBoxContainer.active{
+    width: 25vw;
 }
 
-.ChatBoxContainer.active {
+.ChatBoxPannel{
     position: absolute;
-    opacity: 1;
-    margin-top: 10vh;
-    margin-left: 74.6vw;
-    height: 88vh;
-    width: 25vw;
+    height: 87.3vh;
+    width: 24.5vw;
+    right: -100%;
     border-color: var(--border_gray);
     border-width: 2px;
     border-style: solid;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 10px 10px;
     background-color: white;
-    transition-property: width;
+    overflow: hidden;
+    visibility: visible;
+    transition: 350ms;
+}
+
+.ChatBoxPannel.active {
+    right: 0;
     transition: 350ms;
 }

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import './WelcomeClock.css'
 import '../pages/global.css'
 
-function WelcomeClock() {
+function WelcomeClock(props) {
     // state = {  };
     var [DateTime, setDateTime] = useState(new Date());
 	var date = DateTime.getDate() + '/' + (DateTime.getMonth()+1) + '/' + DateTime.getFullYear();
@@ -30,7 +30,7 @@ function WelcomeClock() {
     
     return (
         <div>
-            <div className='UpbarWelcome'>{welcomemsg} {'UserName'}</div>
+            <div className='UpbarWelcome'>{welcomemsg} {props.userName} !</div>
             <div className='UpbarClock'>{date} | {time}</div>
         </div>
     );

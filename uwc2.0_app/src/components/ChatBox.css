@@ -1,0 +1,144 @@
+.ChatTab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ChatSearchSection{
+    height: 40vh;
+    width: 24.5vw;
+    margin: 0;
+    background-color: white;
+    border-width: 2px;
+    border-color: var(--border_gray);
+    border-bottom-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ChatSearchSection span{
+    margin-top: 0.5em;
+    font-weight: 600;
+}
+
+.ChatSearchBar{
+    width: 15em;
+    height: 1.8em;
+    border: 1.5px;
+    border-color: var(--border_gray);
+    border-radius: 6px;
+    border-style: solid;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 0 1em;
+    margin: 0.5em 0;
+}
+
+.ChatSearchBar img{
+    width: 0.8em;
+}
+.ChatSearchBar input{
+    width: 18em;
+    height: 1.8em;
+    outline: none;
+    padding: 1.2px;
+}
+
+.ChatSearchResult{
+    width: 24.5vw;
+    overflow-y: auto;
+}
+
+.UserChatProfile{
+    display: flex;
+    font-size: 0.8em;
+    gap: 0.5em;
+    margin-left: 3em;
+    cursor: pointer;
+}
+.UserChatProfile img{
+    width: 2em;
+}
+
+.ChatProfileInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.CurrentChatSection{
+    height: 47.3vh;
+    width: 24.5vw;
+    margin: 0;
+    background-color: white;
+}
+
+.SelectedChatProfile{
+    display: flex;
+    height: 6vh;
+    gap: 1em;
+    align-items: center;
+    padding: 0.5em 0.8em;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: var(--border_gray);
+}
+
+.SelectedChatProfile img{
+    width: 3em;
+}
+
+.SelectedChatLog {
+    height: 32vh;
+    width: 24.5vw;
+}
+
+.SelectedChatLog.messages {
+    height: 32vh;
+    width: 24.5vw;
+    border-color: var(--border_gray);
+    border-width: 1.5px;
+    border-radius: 4px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.SelectedChatLog.message {
+    height: fit-content;
+    width: fit-content;
+    max-width: 18vw;
+    padding: 0.2em 0.5em;
+    background-color: var(--blue);
+    color: white;
+    font-size: 0.8em;
+    border-style: none;
+    border-radius: 8px;
+    margin: 0.5em 0.5em 0em 0;
+    text-align: right;
+    margin-left:auto;
+    word-wrap:break-word;
+}
+
+.SelectedChatLog.ChatBar {
+    height: 1.4em;
+    width: 24.5vw;
+    display: flex;
+    border-color: var(--border_gray);
+    border-width: 1.5px;
+    border-radius: 4px;
+    border-style: solid;
+    justify-content:center;
+    align-items:center;
+}
+
+.SelectedChatLog.ChatBar button{
+    font-weight: 600;
+}
+.SelectedChatLog.ChatBar input{
+    outline: none;
+    width: 20vw;
+}

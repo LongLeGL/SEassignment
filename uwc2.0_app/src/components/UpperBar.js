@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './UpperBar.css'
 import '../pages/global.css'
 import WelcomeClock from './WelcomeClock';
-import ChatIcon from '../img/comment.svg';
-import NotiIcon from '../img/bell.svg';
 
-function UpperBar () {
+function UpperBar (props) {
 	return (
 		<div className='UpperBar'>
-			<WelcomeClock />
+			<WelcomeClock userName = {props.userName}/>
 		</div>
 	);
 }

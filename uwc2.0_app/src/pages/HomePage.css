@@ -2,9 +2,37 @@
     background-color: var(--bg_gray);
     width: 86.2vw;
     height: 89.9vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.btn {
-    background-color: aqua;
-    width: 74vw;
+.WeeklyReportSection {
+    background-color: white;
+    width: 70vw;
+    margin: auto;
+    border-color: var(--border_gray);
+    border-radius: 5px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    padding: 0.75em 1em;
+}
+.WeeklyReportSection span:first-child{
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+.WeeklyReportSection span:last-child{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.ActivitiesTable {
+    background-color: white;
+    width: 72.25vw;
+    height: 67vh;
+    margin: auto;
+    border-color: var(--border_gray);
+    border-radius: 5px;
+    border-style: solid;
 }

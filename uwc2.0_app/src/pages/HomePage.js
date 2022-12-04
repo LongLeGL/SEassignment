@@ -5,9 +5,14 @@ import React from 'react';
 function HomePage() {
 	return (
 		<div className='HomePage'>
-			
-				<div>Home page</div>
-				<button className='btn'>HPB</button>
+			<div className='WeeklyReportSection'>
+				<span>Tóm tắt công việc trong tuần</span>
+				<span>Đã xong: 569</span>
+			</div>
+
+			<div className='ActivitiesTable'>
+				Các hoạt động mới nhất
+			</div>
 		</div>
 	);
 }
