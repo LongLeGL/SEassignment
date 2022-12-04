@@ -55,8 +55,8 @@ function AccountManage(props) {
 				onClick={() => {
 					officerInfoModifiers[0](curr_officerUserName);
 					officerInfoModifiers[1](curr_officerEmail);
-					officerInfoModifiers[1](curr_officerPhone);
-					officerInfoModifiers[1](curr_officerAddress);
+					officerInfoModifiers[2](curr_officerPhone);
+					officerInfoModifiers[3](curr_officerAddress);
 				}}
 			>
 				Chỉnh sửa
