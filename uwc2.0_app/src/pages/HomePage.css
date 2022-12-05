@@ -42,3 +42,8 @@
     padding: 0.8em 1em;
     font-weight: 600;
 }
+.ActivitiesTable button {
+    background-color: white;
+    border-style: none;
+    color: black;
+}
