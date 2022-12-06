@@ -12,10 +12,7 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -32,10 +29,16 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function CreateTask() {
 
-	const [value, setValue] = React.useState(dayjs('2022-12-1T21:11:54'));
+	const [value, setValue] = React.useState(dayjs('2022-12-9T14:11:54'));
 
 	const handleChange = (newValue) => {
 		setValue(newValue);
+	};
+
+	const [timeEnd, setTimeEnd] = React.useState(dayjs('2022-12-9T14:11:54'));
+
+	const handleTimeEnd = (newValue) => {
+		setTimeEnd(newValue);
 	};
 
 	const data = [
@@ -178,112 +181,99 @@ function CreateTask() {
 					<Grid item xs={6} md={5}>
 						<LocalizationProvider dateAdapter={AdapterDayjs}>
 							<Stack spacing={3}>
-								<DesktopDatePicker
-									label="Date desktop"
-									inputFormat="MM/DD/YYYY"
-									value={value}
-									onChange={handleChange}
-									renderInput={(params) => <TextField {...params} />}
-								/>
-								<MobileDatePicker
-									label="Date mobile"
-									inputFormat="MM/DD/YYYY"
-									value={value}
-									onChange={handleChange}
-									renderInput={(params) => <TextField {...params} />}
-								/>
-								<TimePicker
-									label="Time"
+
+								<DateTimePicker
+									label="Date&Time start task"
 									value={value}
 									onChange={handleChange}
 									renderInput={(params) => <TextField {...params} />}
 								/>
 								<DateTimePicker
-									label="Date&Time picker"
-									value={value}
-									onChange={handleChange}
+									label="Date&Time end task"
+									value={timeEnd}
+									onChange={handleTimeEnd}
 									renderInput={(params) => <TextField {...params} />}
 								/>
 							</Stack>
 						</LocalizationProvider>
 					</Grid>
 					<Grid item xs={6} md={7}>
-						{/* <Item>xs=6 md=4</Item> */}
-						<Item>
-							Chọn nhân viên
-							<Box sx={{ minWidth: 120 }}>
-								<FormControl fullWidth>
-									<InputLabel id="demo-simple-select-label">ID</InputLabel>
-									<Select
-										labelId="demo-simple-select-label"
-										id="demo-simple-select"
-										value={nhanVien}
-										label="id"
-										onChange={handleNhanVien}
-									>
-										{/* <MenuItem value={'C132451'}>C132451</MenuItem>
-										<MenuItem value={'C132452'}>C132452</MenuItem>
-										<MenuItem value={'C132453'}>C132453</MenuItem> */}
-										{listNhanVien}
+						<Grid container spacing={3} >
+							<Grid item xs={6}>
+								{/* <Item> */}
+								Chọn nhân viên
+								<Box sx={{ minWidth: 120 }} style={{ paddingTop: "5px" }}>
+									<FormControl fullWidth>
+										<InputLabel id="demo-simple-select-label">ID</InputLabel>
+										<Select
+											labelId="demo-simple-select-label"
+											id="demo-simple-select"
+											value={nhanVien}
+											label="id"
+											onChange={handleNhanVien}
+										>
+											{listNhanVien}
 
-									</Select>
-								</FormControl>
-							</Box>
-							<Grid container spacing={0} >
-								<Grid item xs={6} md={5}>
-									{nhanVien && <img style={{ height: "10em", padding: "20px" }} src={`image/avatar/${foundAva()}`} alt='imageAva'></img>}
-								</Grid>
-								<Grid item xs={6} md={7}>
-									<Grid container spacing={3} style={{ padding: "20px" }}>
-										<Grid item xs={12} md={12}>
-											{nhanVien ? `ID: ${nhanVien}` : ''}
-										</Grid>
-										<Grid item xs={12} md={12}>
-											{nhanVien ? `Tên: ${foundName()}` : ''}
+										</Select>
+									</FormControl>
+								</Box>
+								<Grid container spacing={0} >
+									<Grid item xs={12} md={12}>
+										{nhanVien && <img style={{ height: "10em", padding: "20px" }} src={`image/avatar/${foundAva()}`} alt='imageAva'></img>}
+									</Grid>
+									<Grid item xs={12} md={12}>
+										<Grid container spacing={3} style={{ padding: "10px" }}>
+											<Grid item xs={12} md={12}>
+												{nhanVien ? `ID: ${nhanVien}` : ''}
+											</Grid>
+											<Grid item xs={12} md={12}>
+												{nhanVien ? `Tên: ${foundName()}` : ''}
+											</Grid>
 										</Grid>
 									</Grid>
 								</Grid>
 							</Grid>
-
-							Chọn phương tiện
-							<Box sx={{ minWidth: 120 }}>
-								<FormControl fullWidth>
-									<InputLabel id="demo-simple-select-label">ID</InputLabel>
-									<Select
-										labelId="demo-simple-select-label"
-										id="demo-simple-select"
-										value={phuongTien}
-										label="phuongTien"
-										onChange={handlePhuongTien}
-									>
-										{nhanVien && listPhuongTien}
-									</Select>
-								</FormControl>
-							</Box>
-							<Grid container spacing={0} >
-								<Grid item xs={6} md={5}>
-									{phuongTien && <img style={{ height: "10em", padding: "20px" }} src={`image/trash/${foundImg()}`} alt='imageAva'></img>}
-								</Grid>
-								<Grid item xs={6} md={7}>
-									<Grid container spacing={3} style={{ padding: "20px" }}>
-										<Grid item xs={12} md={12}>
-											{phuongTien ? `Loại: ${foundType()}` : ''}
-										</Grid>
-										<Grid item xs={12} md={12}>
-											{phuongTien ? `ID: ${phuongTien}` : ''}
+							<Grid item xs={6}>
+								Chọn phương tiện
+								<Box sx={{ minWidth: 120 }} style={{ paddingTop: "5px" }} s>
+									<FormControl fullWidth>
+										<InputLabel id="demo-simple-select-label">ID</InputLabel>
+										<Select
+											labelId="demo-simple-select-label"
+											id="demo-simple-select"
+											value={phuongTien}
+											label="phuongTien"
+											onChange={handlePhuongTien}
+										>
+											{nhanVien && listPhuongTien}
+										</Select>
+									</FormControl>
+								</Box>
+								<Grid container spacing={0} >
+									<Grid item xs={12} md={12}>
+										{phuongTien && <img style={{ height: "10em", padding: "20px" }} src={`image/trash/${foundImg()}`} alt='imageAva'></img>}
+									</Grid>
+									<Grid item xs={12} md={12}>
+										<Grid container spacing={3} style={{ padding: "10px" }}>
+											<Grid item xs={12} md={12}>
+												{phuongTien ? `Loại: ${foundType()}` : ''}
+											</Grid>
+											<Grid item xs={12} md={12}>
+												{phuongTien ? `ID: ${phuongTien}` : ''}
+											</Grid>
 										</Grid>
 									</Grid>
 								</Grid>
 							</Grid>
-
-						</Item>
-					</Grid>
-					<Grid item xs={6} md={12}>
-						<Item>
-							<Button>
-								Xác nhận
-							</Button>
-						</Item>
+							{/* </Item> */}
+						</Grid>
+						<Grid item xs={6} md={12}>
+							<Item>
+								<Button>
+									Xác nhận
+								</Button>
+							</Item>
+						</Grid>
 					</Grid>
 				</Grid>
 			</Box >
