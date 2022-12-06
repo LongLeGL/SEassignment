@@ -53,98 +53,104 @@ function CreateTask() {
 
 
 	return (
-		<div className='CreateTask'>
-			<Box sx={{ flexGrow: 1 }}>
-				<Grid container spacing={3} >
-					<Grid item xs={6} md={5}>
-						<LocalizationProvider dateAdapter={AdapterDayjs}>
-							<Stack spacing={3}>
-								<DesktopDatePicker
-									label="Date desktop"
-									inputFormat="MM/DD/YYYY"
-									value={value}
-									onChange={handleChange}
-									renderInput={(params) => <TextField {...params} />}
-								/>
-								<MobileDatePicker
-									label="Date mobile"
-									inputFormat="MM/DD/YYYY"
-									value={value}
-									onChange={handleChange}
-									renderInput={(params) => <TextField {...params} />}
-								/>
-								<TimePicker
-									label="Time"
-									value={value}
-									onChange={handleChange}
-									renderInput={(params) => <TextField {...params} />}
-								/>
-								<DateTimePicker
-									label="Date&Time picker"
-									value={value}
-									onChange={handleChange}
-									renderInput={(params) => <TextField {...params} />}
-								/>
-							</Stack>
-						</LocalizationProvider>
-					</Grid>
-					<Grid item xs={6} md={7}>
-						{/* <Item>xs=6 md=4</Item> */}
-						<Item>Chọn phương tiện
-							<Box sx={{ minWidth: 120 }}>
-								<FormControl fullWidth>
-									<InputLabel id="demo-simple-select-label">ID</InputLabel>
-									<Select
-										labelId="demo-simple-select-label"
-										id="demo-simple-select"
-										value={age}
-										label="Age"
-										onChange={handleChange3}
-									>
-										<MenuItem value={'T012'}>T012</MenuItem>
-										<MenuItem value={'T013'}>T013</MenuItem>
-										<MenuItem value={'T014'}>T014</MenuItem>
-									</Select>
-								</FormControl>
-							</Box>
-							{/* </Item> */}
-							{/* </Grid> */}
-							{/* <Grid item xs={6} md={5}> */}
-							{/* <Item>xs=6 md=8</Item> */}
-							{/* <Item>Chọn nhân viên */}
-							<div style={{ height: "40px" }}>
+    <>
+      <div className='PageHeader'>
+        <h2>Tạo công việc mới</h2>
+      </div>
+      <div className='CreateTask'>
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={3} >
+            <Grid item xs={6} md={5}>
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <Stack spacing={3}>
+                  <DesktopDatePicker
+                    label="Date desktop"
+                    inputFormat="MM/DD/YYYY"
+                    value={value}
+                    onChange={handleChange}
+                    renderInput={(params) => <TextField {...params} />}
+                  />
+                  <MobileDatePicker
+                    label="Date mobile"
+                    inputFormat="MM/DD/YYYY"
+                    value={value}
+                    onChange={handleChange}
+                    renderInput={(params) => <TextField {...params} />}
+                  />
+                  <TimePicker
+                    label="Time"
+                    value={value}
+                    onChange={handleChange}
+                    renderInput={(params) => <TextField {...params} />}
+                  />
+                  <DateTimePicker
+                    label="Date&Time picker"
+                    value={value}
+                    onChange={handleChange}
+                    renderInput={(params) => <TextField {...params} />}
+                  />
+                </Stack>
+              </LocalizationProvider>
+            </Grid>
+            <Grid item xs={6} md={7}>
+              {/* <Item>xs=6 md=4</Item> */}
+              <Item>Chọn phương tiện
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">ID</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={age}
+                      label="Age"
+                      onChange={handleChange3}
+                    >
+                      <MenuItem value={'T012'}>T012</MenuItem>
+                      <MenuItem value={'T013'}>T013</MenuItem>
+                      <MenuItem value={'T014'}>T014</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+                {/* </Item> */}
+                {/* </Grid> */}
+                {/* <Grid item xs={6} md={5}> */}
+                {/* <Item>xs=6 md=8</Item> */}
+                {/* <Item>Chọn nhân viên */}
+                <div style={{ height: "40px" }}>
 
-							</div>
-							Chọn nhân viên
-							<Box sx={{ minWidth: 120 }}>
-								<FormControl fullWidth>
-									<InputLabel id="demo-simple-select-label">ID</InputLabel>
-									<Select
-										labelId="demo-simple-select-label"
-										id="demo-simple-select"
-										value={id}
-										label="id"
-										onChange={handleChange2}
-									>
-										<MenuItem value={'C132451'}>C132451</MenuItem>
-										<MenuItem value={'C132452'}>C132452</MenuItem>
-										<MenuItem value={'C132453'}>C132453</MenuItem>
-									</Select>
-								</FormControl>
-							</Box>
+                </div>
+                Chọn nhân viên
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">ID</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={id}
+                      label="id"
+                      onChange={handleChange2}
+                    >
+                      <MenuItem value={'C132451'}>C132451</MenuItem>
+                      <MenuItem value={'C132452'}>C132452</MenuItem>
+                      <MenuItem value={'C132453'}>C132453</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
 
-						</Item>
-					</Grid>
-					<Grid item xs={6} md={12}>
-						<Item>
-							<Button>
-								Xác nhận
-							</Button>
-						</Item>
-					</Grid>
-				</Grid>
-			</Box>
-		</div >
+              </Item>
+            </Grid>
+            <Grid item xs={6} md={12}>
+              <Item>
+                <Button>
+                  Xác nhận
+                </Button>
+              </Item>
+            </Grid>
+          </Grid>
+        </Box>
+      </div >
+    </>
+		
 	);
 }
 
