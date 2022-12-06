@@ -51,6 +51,71 @@ function CreateTask() {
 		setAge(event.target.value);
 	};
 
+	const data = [
+		{
+			ID: "J0001",
+			Name: "Long Le Hoang",
+			mail: "longle69@uwc.com",
+
+		},
+		{
+			ID: "J0002",
+			Name: "Nguyen Ngo Quang",
+			mail: "longle69@uwc.com",
+		},
+		{
+			ID: "J0003",
+			Name: "Khoi Le Quang",
+			mail: "longle69@uwc.com",
+		},
+		{
+			ID: "J0004",
+			Name: "Thien Luu Trinh",
+			mail: "longle69@uwc.com",
+		},
+		{
+			ID: "J0005",
+			Name: "Phuc Nguyen Nho Gia",
+			mail: "longle69@uwc.com",
+		},
+		{
+			ID: "C0001",
+			Name: "Nguyen Bao Tran",
+			mail: "longle69@uwc.com",
+		},
+		{
+			ID: "C0002",
+			Name: "Nguyen Van A",
+			mail: "longle69@uwc.com",
+		},
+		{
+			ID: "C0003",
+			Name: "Le Quang B",
+			mail: "longle69@uwc.com",
+		},
+		{
+			ID: "C0004",
+			Name: "Dao Phuc C",
+			mail: "longle69@uwc.com",
+		},
+		{
+			ID: "C0005",
+			Name: "Do Ngoc Bao D",
+			mail: "longle69@uwc.com",
+		}
+	]
+
+	const listNhanVien = data.map((item) =>
+		<MenuItem key={item.ID} value={item.ID}>{item.ID}</MenuItem>
+	)
+
+	const [nhanVien, setNhanVien] = React.useState('');
+
+	const handleNhanVien = (event) => {
+		setNhanVien(event.target.value);
+	};
+
+	console.log({ nhanVien })
 
 	return (
 		<div className='CreateTask'>
@@ -107,11 +172,6 @@ function CreateTask() {
 									</Select>
 								</FormControl>
 							</Box>
-							{/* </Item> */}
-							{/* </Grid> */}
-							{/* <Grid item xs={6} md={5}> */}
-							{/* <Item>xs=6 md=8</Item> */}
-							{/* <Item>Chọn nhân viên */}
 							<div style={{ height: "40px" }}>
 
 							</div>
@@ -124,11 +184,13 @@ function CreateTask() {
 										id="demo-simple-select"
 										value={id}
 										label="id"
-										onChange={handleChange2}
+										onChange={handleNhanVien}
 									>
-										<MenuItem value={'C132451'}>C132451</MenuItem>
+										{/* <MenuItem value={'C132451'}>C132451</MenuItem>
 										<MenuItem value={'C132452'}>C132452</MenuItem>
-										<MenuItem value={'C132453'}>C132453</MenuItem>
+										<MenuItem value={'C132453'}>C132453</MenuItem> */}
+										{listNhanVien}
+
 									</Select>
 								</FormControl>
 							</Box>
