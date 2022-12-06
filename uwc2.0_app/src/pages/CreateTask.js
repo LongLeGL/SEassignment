@@ -53,21 +53,26 @@ function CreateTask() {
 
 
 	return (
-    <>
-      <div className='MyMap'>
-      <MapContainer center={[45.4, -75.7]} zoom={12}scrollWheelZoom={false}>
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          />
-          
-        </MapContainer>
-      </div>
-      
+    <>     
       <div className='PageHeader'>
         <h2>Tạo công việc mới</h2>
       </div>
       <div className='CreateTask'>
+      <Grid container spacing = {3}>
+            <Grid item xs = {8}>
+              <MapContainer center={[10.773202, 106.659764]} zoom={16} scrollWheelZoom={false}>
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+              </MapContainer>
+            </Grid>
+            <Grid item xs={4}>
+              <div className='MyRouteSelection'>
+                <p> (Tạo thêm drop-down ở đây nhỉ?) </p>
+              </div>
+            </Grid>
+          </Grid>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={3} >
             <Grid item xs={6} md={5}>
