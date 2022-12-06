@@ -38,71 +38,95 @@ function CreateTask() {
 		setValue(newValue);
 	};
 
-
-	const [id, setid] = React.useState('');
-
-	const handleChange2 = (event) => {
-		setid(event.target.value);
-	};
-
-	const [age, setAge] = React.useState('');
-
-	const handleChange3 = (event) => {
-		setAge(event.target.value);
-	};
-
 	const data = [
 		{
 			ID: "J0001",
 			Name: "Long Le Hoang",
-			mail: "longle69@uwc.com",
-
+			ava: "chen.jpg"
 		},
 		{
 			ID: "J0002",
 			Name: "Nguyen Ngo Quang",
-			mail: "longle69@uwc.com",
+			ava: "seungri.jpg"
 		},
 		{
 			ID: "J0003",
 			Name: "Khoi Le Quang",
-			mail: "longle69@uwc.com",
+			ava: "suho.jpg"
 		},
 		{
 			ID: "J0004",
 			Name: "Thien Luu Trinh",
-			mail: "longle69@uwc.com",
+			ava: "gdragon.jpg"
 		},
 		{
 			ID: "J0005",
 			Name: "Phuc Nguyen Nho Gia",
-			mail: "longle69@uwc.com",
+			ava: "sehun.jpg"
 		},
 		{
 			ID: "C0001",
 			Name: "Nguyen Bao Tran",
-			mail: "longle69@uwc.com",
+			ava: "irene.jpg"
 		},
 		{
 			ID: "C0002",
 			Name: "Nguyen Van A",
-			mail: "longle69@uwc.com",
+			ava: "momo.jpg"
 		},
 		{
 			ID: "C0003",
 			Name: "Le Quang B",
-			mail: "longle69@uwc.com",
+			ava: "nayeon.jpg"
 		},
 		{
 			ID: "C0004",
 			Name: "Dao Phuc C",
-			mail: "longle69@uwc.com",
+			ava: "top.jpg"
 		},
 		{
 			ID: "C0005",
 			Name: "Do Ngoc Bao D",
-			mail: "longle69@uwc.com",
+			ava: "v.jpg"
 		}
+	]
+
+	const phuongTienData = [
+		{
+			ID: "T0112",
+			Type: "Xe chở rác",
+			photo: "xeChoRac.png"
+		},
+		{
+			ID: "T0123",
+			Type: "Xe chở rác",
+			photo: "xeChoRac.png"
+		},
+		{
+			ID: "T0824",
+			Type: "Xe chở rác",
+			photo: "xeChoRac.png"
+		},
+		{
+			ID: "T1235",
+			Type: "Xe chở rác",
+			photo: "xeChoRac.png"
+		},
+		{
+			ID: "S02931",
+			Type: "Xe Đẩy",
+			photo: "troller1.png"
+		},
+		{
+			ID: "S01242",
+			Type: "Xe Đẩy",
+			photo: "troller2.png"
+		},
+		{
+			ID: "S08853",
+			Type: "Xe Đẩy",
+			photo: "troller1.png"
+		},
 	]
 
 	const listNhanVien = data.map((item) =>
@@ -115,7 +139,37 @@ function CreateTask() {
 		setNhanVien(event.target.value);
 	};
 
-	console.log({ nhanVien })
+	const [phuongTien, setPhuongTien] = React.useState('');
+
+	const handlePhuongTien = (event) => {
+		setPhuongTien(event.target.value);
+	};
+
+	const listPhuongTien = phuongTienData.filter(phuongTien => phuongTien.Type === (nhanVien[0] === 'C' ? 'Xe chở rác' : 'Xe Đẩy')).map((item) =>
+		<MenuItem key={item.ID} value={item.ID}>{item.ID}</MenuItem>
+	)
+
+	const foundAva = function () {
+		return data.find(obj => obj.ID === nhanVien)?.ava;
+	}
+
+	const foundName = function () {
+		return data.find(obj => obj.ID === nhanVien)?.Name;
+	}
+
+	const foundImg = function () {
+		return phuongTienData.find(obj => obj.ID === phuongTien)?.photo;
+	}
+
+	const foundType = function () {
+		return phuongTienData.find(obj => obj.ID === phuongTien)?.Type;
+	}
+
+	React.useEffect(() => {
+		setPhuongTien('');
+	}, [nhanVien])
+
+	console.log(Array.from(nhanVien)[0])
 
 	return (
 		<div className='CreateTask'>
@@ -155,26 +209,7 @@ function CreateTask() {
 					</Grid>
 					<Grid item xs={6} md={7}>
 						{/* <Item>xs=6 md=4</Item> */}
-						<Item>Chọn phương tiện
-							<Box sx={{ minWidth: 120 }}>
-								<FormControl fullWidth>
-									<InputLabel id="demo-simple-select-label">ID</InputLabel>
-									<Select
-										labelId="demo-simple-select-label"
-										id="demo-simple-select"
-										value={age}
-										label="Age"
-										onChange={handleChange3}
-									>
-										<MenuItem value={'T012'}>T012</MenuItem>
-										<MenuItem value={'T013'}>T013</MenuItem>
-										<MenuItem value={'T014'}>T014</MenuItem>
-									</Select>
-								</FormControl>
-							</Box>
-							<div style={{ height: "40px" }}>
-
-							</div>
+						<Item>
 							Chọn nhân viên
 							<Box sx={{ minWidth: 120 }}>
 								<FormControl fullWidth>
@@ -182,7 +217,7 @@ function CreateTask() {
 									<Select
 										labelId="demo-simple-select-label"
 										id="demo-simple-select"
-										value={id}
+										value={nhanVien}
 										label="id"
 										onChange={handleNhanVien}
 									>
@@ -194,6 +229,52 @@ function CreateTask() {
 									</Select>
 								</FormControl>
 							</Box>
+							<Grid container spacing={0} >
+								<Grid item xs={6} md={5}>
+									{nhanVien && <img style={{ height: "10em", padding: "20px" }} src={`image/avatar/${foundAva()}`} alt='imageAva'></img>}
+								</Grid>
+								<Grid item xs={6} md={7}>
+									<Grid container spacing={3} style={{ padding: "20px" }}>
+										<Grid item xs={12} md={12}>
+											{nhanVien ? `ID: ${nhanVien}` : ''}
+										</Grid>
+										<Grid item xs={12} md={12}>
+											{nhanVien ? `Tên: ${foundName()}` : ''}
+										</Grid>
+									</Grid>
+								</Grid>
+							</Grid>
+
+							Chọn phương tiện
+							<Box sx={{ minWidth: 120 }}>
+								<FormControl fullWidth>
+									<InputLabel id="demo-simple-select-label">ID</InputLabel>
+									<Select
+										labelId="demo-simple-select-label"
+										id="demo-simple-select"
+										value={phuongTien}
+										label="phuongTien"
+										onChange={handlePhuongTien}
+									>
+										{nhanVien && listPhuongTien}
+									</Select>
+								</FormControl>
+							</Box>
+							<Grid container spacing={0} >
+								<Grid item xs={6} md={5}>
+									{phuongTien && <img style={{ height: "10em", padding: "20px" }} src={`image/trash/${foundImg()}`} alt='imageAva'></img>}
+								</Grid>
+								<Grid item xs={6} md={7}>
+									<Grid container spacing={3} style={{ padding: "20px" }}>
+										<Grid item xs={12} md={12}>
+											{phuongTien ? `Loại: ${foundType()}` : ''}
+										</Grid>
+										<Grid item xs={12} md={12}>
+											{phuongTien ? `ID: ${phuongTien}` : ''}
+										</Grid>
+									</Grid>
+								</Grid>
+							</Grid>
 
 						</Item>
 					</Grid>
@@ -205,7 +286,7 @@ function CreateTask() {
 						</Item>
 					</Grid>
 				</Grid>
-			</Box>
+			</Box >
 		</div >
 	);
 }
