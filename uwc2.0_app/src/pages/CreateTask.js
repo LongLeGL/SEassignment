@@ -22,7 +22,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Button } from '@mui/material';
-
+import { MapContainer, TileLayer } from 'react-leaflet';
 const Item = styled(Paper)(({ theme }) => ({
 	padding: theme.spacing(1),
 	textAlign: 'center',
@@ -54,6 +54,16 @@ function CreateTask() {
 
 	return (
     <>
+      <div className='MyMap'>
+      <MapContainer center={[45.4, -75.7]} zoom={12}scrollWheelZoom={false}>
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          />
+          
+        </MapContainer>
+      </div>
+      
       <div className='PageHeader'>
         <h2>Tạo công việc mới</h2>
       </div>
