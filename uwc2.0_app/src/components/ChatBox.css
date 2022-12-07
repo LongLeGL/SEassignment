@@ -57,6 +57,8 @@
     font-size: 0.8em;
     gap: 0.5em;
     margin-left: 3em;
+    margin-bottom: 0.5em;
+    /* border-bottom: 1px var(--border_gray) solid; */
     cursor: pointer;
 }
 .UserChatProfile img{
