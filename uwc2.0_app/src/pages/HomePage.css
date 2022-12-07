@@ -38,12 +38,26 @@
     display: flex;
     flex-direction: column;
 }
-.ActivitiesTable div:first-child {
+.ActivitiesTableTitle {
     padding: 0.8em 1em;
     font-weight: 600;
 }
 .ActivitiesTable button {
     background-color: white;
     border-style: none;
+    color: black;
+}
+
+.MuiGrid-grid-xs-20{
+    width: 60vw;
+    height: 50vh;
+    margin-left: -2em;
+}
+
+.MuiGrid-grid-xs-20.gridjs-container {
+    width: 60vw;
+}
+
+.MuiGrid-grid-xs-20.gridjs-container [data-column-id="mãSốNv"] {
     color: black;
 }

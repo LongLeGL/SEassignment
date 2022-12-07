@@ -13,28 +13,28 @@ function HomePage() {
 			</div>
 
 			<div className='ActivitiesTable'>
-				<div>Các hoạt động mới nhất</div>
+				<div className='ActivitiesTableTitle'>Các hoạt động mới nhất</div>
 				<div>
-					<Grid container spacing={5}>
-					<Grid item xs={20}>
+					<Grid container spacing={3}>
+					<Grid item xs={11}>
 						<GridJS
 							data={[
-								["J0001", "Long Le Hoang", "longle69@uwc.com", "07/12 | 11:01", "xong"],
-								["J0002", "Nguyen Ngo Quang", "nguyenngo@uwc.com", "07/12 | 10:59", "xong"],
-								["J0003", "Khoi Le Quang", "smokeyle123@uwc.com", "07/12 | 10:55", "xong"],
-								["J0004", "Thien Luu Trinh", "skyluu@uwc.com", "07/12 | 10:45", "xong"],
-								["J0005", "Phuc Nguyen Nho Gia", "phucdeptrainguyen@uwc.com", "07/12 | 10:44", "xong"],
-								["C0001", "Nguyen Bao Tran", "btran@uwc.com", "07/12 | 10:22", "xong"],
-								["C0002", "Nguyen Van A", "Aphu@uwc.com", "07/12 | 09:55", "xong"],
-								["C0003", "Le Quang B", "bedepele@uwc.com", "07/12 | 09:43", "xong"],
-								["C0004", "Dao Phuc C", "concatstring@uwc.com", "07/12 | 09:31", "xong"],
-								["C0005", "Do Ngoc Bao D", "deezn@uwc.com", "07/12 | 09:25", "xong"],
+								["J0001", "Long Le Hoang", "MCP001", "07/12 | 11:01", "xong"],
+								["J0002", "Nguyen Ngo Quang", "MCP003", "07/12 | 10:59", "xong"],
+								["J0003", "Khoi Le Quang", "MCP011", "07/12 | 10:55", "xong"],
+								["J0004", "Thien Luu Trinh", "MCP002", "07/12 | 10:45", "xong"],
+								["J0005", "Phuc Nguyen Nho Gia", "MCP014", "07/12 | 10:44", "xong"],
+								["C0001", "Nguyen Bao Tran", "MCP001, MCP002", "07/12 | 10:22", "xong"],
+								["C0002", "Nguyen Van A", "MCP004, MCP006", "07/12 | 09:55", "xong"],
+								["C0003", "Le Quang B", "MCP003, MCP007", "07/12 | 09:43", "xong"],
+								["C0004", "Dao Phuc C", "MCP008, MCP012, MCP015", "07/12 | 09:31", "xong"],
+								["C0005", "Do Ngoc Bao D", "MCP023", "07/12 | 09:25", "xong"],
 							]}
 							columns={["Mã số NV", "Tên nhân viên", "MCP", "Thời gian", "Trạng thái", "Ghi chú"]}
 							search={false}
 							pagination={{
 								enabled: true,
-								limit: 5,
+								limit: 6,
 							}}
 							sort = {false}
 							autoWidth = {true}
@@ -51,6 +51,8 @@ function HomePage() {
 								"border-bottom": "2px solid #ccc",
 								"text-align": "center",
 								"width":"100%",
+								"padding":"0.8em 0.2em",
+								"font-weight":"600"
 								},
 								td: {
 								"text-align": "center",
