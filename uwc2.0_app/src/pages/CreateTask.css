@@ -1,5 +1,53 @@
-.CreateTask{
-    background-color: var(--bg_gray);
-    width: 86.2vw;
-    height: 89.9vh;
+.leaflet-container {
+  width: 50vw;
+  height: 60vh;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}
+.MyRouteSelectionHeader{
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #9795ef, #f9c5d1);
+}
+
+.MyRouteSelection{
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  background-color: lightgray;
+}
+
+
+.CreateTask {
+  background-color: var(--bg_gray);
+  width: 80vw;
+  height: 80vh;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  padding: 10px;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.ConfirmButton {
+  color: green;
 }

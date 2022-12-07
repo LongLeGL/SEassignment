@@ -34,7 +34,7 @@ a .tab-list-active {
 }
 
 .Separator{
-    width: 15vw;
+    width: 13.65vw;
     height: 2px;
     background-color: var(--border_gray);
 }
