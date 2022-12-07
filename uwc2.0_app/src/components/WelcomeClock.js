@@ -11,7 +11,7 @@ function WelcomeClock(props) {
     var hour = DateTime.getHours()
 
     var welcomemsg;
-    if (hour < 11)
+    if (hour < 12)
         welcomemsg = "Chào buổi sáng";
     else if (hour < 18)
         welcomemsg = "Chào buổi chiều";

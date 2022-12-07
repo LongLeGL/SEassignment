@@ -83,6 +83,7 @@ function CreateTask() {
   ];
   const [value, setValue] = React.useState(dayjs('2022-12-9T14:11:54'));
 
+
 	const handleChange = (newValue) => {
 		setValue(newValue);
 	};
@@ -92,6 +93,7 @@ function CreateTask() {
 	const handleTimeEnd = (newValue) => {
 		setTimeEnd(newValue);
 	};
+
 
 	const data = [
 		{
@@ -223,6 +225,13 @@ function CreateTask() {
 	React.useEffect(() => {
 		setPhuongTien('');
 	}, [nhanVien])
+
+	console.log(Array.from(nhanVien)[0])
+
+
+	React.useEffect(() => {
+		setPhuongTien('');
+	}, [nhanVien])
   return (
     <>
       <div className="CreateTask">
@@ -326,6 +335,7 @@ function CreateTask() {
 						</Grid>
 					</Grid>
 				</Grid>
+
 		</Box >
 		<Grid container spacing={3}>
           <Grid item xs={8}>
