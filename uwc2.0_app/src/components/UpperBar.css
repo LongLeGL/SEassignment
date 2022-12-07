@@ -1,4 +1,4 @@
-.UpperBar{
+.UpperBar {
     width: 86.2vw;
     height: 10vh;
     background-color: white;
@@ -6,4 +6,5 @@
     border-width: 1px;
     border-color: var(--border_gray);
     border-bottom-style: solid;
+    padding-bottom: 16px;
 }
