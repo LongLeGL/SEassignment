@@ -26,12 +26,15 @@ import { Button, requirePropFactory } from "@mui/material";
 // imports for Leaflet and React-Leaflet
 import marker from '../img/marker.png';
 import L from "leaflet";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
 }));
+
+const bachKhoaLat = 10.773202;
+const bachKhoaLong = 106.659764;
 
 const markerIcon = new L.icon({
   iconUrl: require('../img/marker.png'),
@@ -105,7 +108,7 @@ function CreateTask() {
         <Grid container spacing={3}>
           <Grid item xs={8}>
             <MapContainer
-              center={[10.773202, 106.659764]}
+              center={[bachKhoaLat, bachKhoaLong]}
               zoom={13}
               scrollWheelZoom={false}
             >
@@ -116,6 +119,11 @@ function CreateTask() {
               <Marker 
                 position={[10.773202, 106.659764]}
                 icon={markerIcon}
+                eventHandlers={{
+                  click: (e) => {
+                    console.log('marker clicked', e)
+                  },
+                }}
               >
                 <Popup>
                   <p>Trụ sở chính</p>
@@ -126,6 +134,11 @@ function CreateTask() {
                  position={[mcp.latitude, mcp.longitude]}
                  icon={markerIcon}
                  key={idx}
+                 eventHandlers={{
+                  click: (e) => {
+                    console.log('marker clicked', e)
+                  },
+                }}
                >
                  <Popup>
                    <b>
