@@ -101,9 +101,6 @@ function CreateTask() {
 
   return (
     <>
-      <div className="PageHeader">
-        <h2>Tạo công việc mới</h2>
-      </div>
       <div className="CreateTask">
         <Grid container spacing={3}>
           <Grid item xs={8}>

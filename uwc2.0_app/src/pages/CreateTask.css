@@ -1,20 +1,3 @@
-.PageHeader {
-  font-weight: bold;
-  background-color: var(--bg_gray);
-  width: 80vw;
-  height: auto;
-  margin-top: 25px;
-  margin-left: 25px;
-  margin-right: 25px;
-  margin-bottom: 10px;
-  padding-left: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 10px;
-  vertical-align: middle;
-  background-image: linear-gradient(to right, #9795ef, #f9c5d1);
-  /* box-shadow: 2px 2px 1px 2px lightgray; */
-}
 .leaflet-container {
   width: 50vw;
   height: 60vh;
@@ -62,6 +45,7 @@
   margin-bottom: 25px;
   padding: 10px;
   border-radius: 10px;
+  overflow-y: scroll;
 }
 
 .ConfirmButton {

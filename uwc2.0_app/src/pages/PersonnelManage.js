@@ -2,10 +2,8 @@ import "./global.css";
 import "./PersonnelManage.css";
 import React from "react";
 import { Grid as GridJS } from "gridjs-react";
-import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import MenuItem from "@mui/material/MenuItem";
 import { styled } from "@mui/material/styles";
 
 const Item = styled(Paper)(({ theme }) => ({
