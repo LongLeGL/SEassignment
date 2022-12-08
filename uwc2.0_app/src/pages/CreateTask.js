@@ -1,6 +1,7 @@
 import "./global.css";
 import "./CreateTask.css";
 import React from "react";
+import {Link} from "react-router-dom";
 
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -260,15 +261,14 @@ function CreateTask() {
 						<Grid container spacing={3} >
 							<Grid item xs={6}>
 								{/* <Item> */}
-								Chọn nhân viên
-								<Box sx={{ minWidth: 120 }} style={{ paddingTop: "5px" }}>
+								<Box sx={{ minWidth: 120 }} style={{ paddingTop: "1px" }}>
 									<FormControl fullWidth>
-										<InputLabel id="demo-simple-select-label">ID</InputLabel>
+										<InputLabel id="demo-simple-select-label">ID nhân viên</InputLabel>
 										<Select
 											labelId="demo-simple-select-label"
 											id="demo-simple-select"
 											value={nhanVien}
-											label="id"
+											label="Nhan vien ID"
 											onChange={handleNhanVien}
 										>
 											{listNhanVien}
@@ -278,7 +278,7 @@ function CreateTask() {
 								</Box>
 								<Grid container spacing={0} >
 									<Grid item xs={12} md={12}>
-										{nhanVien && <img style={{ height: "10em", padding: "20px" }} src={`image/avatar/${foundAva()}`} alt='imageAva'></img>}
+										{nhanVien && <img style={{ height: "8em", padding: "20px" }} src={`image/avatar/${foundAva()}`} alt='imageAva'></img>}
 									</Grid>
 									<Grid item xs={12} md={12}>
 										<Grid container spacing={3} style={{ padding: "10px" }}>
@@ -293,10 +293,9 @@ function CreateTask() {
 								</Grid>
 							</Grid>
 							<Grid item xs={6}>
-								Chọn phương tiện
-								<Box sx={{ minWidth: 120 }} style={{ paddingTop: "5px" }} s>
+								<Box sx={{ minWidth: 120 }} style={{ paddingTop: "1px" }} s>
 									<FormControl fullWidth>
-										<InputLabel id="demo-simple-select-label">ID</InputLabel>
+										<InputLabel id="demo-simple-select-label">ID phương tiện</InputLabel>
 										<Select
 											labelId="demo-simple-select-label"
 											id="demo-simple-select"
@@ -310,7 +309,7 @@ function CreateTask() {
 								</Box>
 								<Grid container spacing={0} >
 									<Grid item xs={12} md={12}>
-										{phuongTien && <img style={{ height: "10em", padding: "20px" }} src={`image/trash/${foundImg()}`} alt='imageAva'></img>}
+										{phuongTien && <img style={{ height: "8em", padding: "20px" }} src={`image/trash/${foundImg()}`} alt='imageAva'></img>}
 									</Grid>
 									<Grid item xs={12} md={12}>
 										<Grid container spacing={3} style={{ padding: "10px" }}>
@@ -325,13 +324,6 @@ function CreateTask() {
 								</Grid>
 							</Grid>
 							{/* </Item> */}
-						</Grid>
-						<Grid item xs={6} md={12}>
-							<Item>
-								<Button>
-									Xác nhận
-								</Button>
-							</Item>
 						</Grid>
 					</Grid>
 				</Grid>
@@ -409,6 +401,18 @@ function CreateTask() {
             </div>
           </Grid>
         </Grid>
+		<Grid item xs={6} md={12}>
+			<Link to="/Home">
+				<Item>
+            		<button style={{
+						'background-color':"white",
+						'color':'black',
+						"font-size": "1.5em",
+						'font-weight': '600'	
+					}}>Xác nhận</button>	
+				</Item>
+			</Link>
+		</Grid>
 
       </div>
     </>
