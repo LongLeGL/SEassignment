@@ -186,7 +186,7 @@ function CreateTask() {
 			photo: "troller1.png"
 		},
 	]
-
+	const [destination, setDestination] = React.useState([])
 	const listNhanVien = data.map((item) =>
 		<MenuItem key={item.ID} value={item.ID}>{item.ID}</MenuItem>
 	)
@@ -233,6 +233,27 @@ function CreateTask() {
 	React.useEffect(() => {
 		setPhuongTien('');
 	}, [nhanVien])
+	function Routing() {
+		const map = useMap();
+	  
+		React.useEffect(() => {
+		  if (!map) return;
+			
+		  const routingControl = L.Routing.control({
+			waypoints: [L.latLng(10.772093436939588, 106.6578857044717), L.latLng(destination[0], destination[1])],
+		  lineOptions: {
+			styles: [{color: "#638aa7",weight: 4}]
+		  },
+		  routeWhileDragging: false,
+		  addWaypoints: false,
+		  draggableWaypoints: false,
+		  }).addTo(map);
+	  
+		  return () => map.removeControl(routingControl);
+		}, [map]);
+	  
+		return null;
+	  }
   return (
     <>
       <div className="CreateTask">
@@ -371,6 +392,7 @@ function CreateTask() {
                  </Popup>
                </Marker>
               ))};
+			  <Routing/>
             </MapContainer>
           </Grid>
           <Grid item xs={4}>
