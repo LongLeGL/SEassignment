@@ -44,7 +44,7 @@ function MCPManage() {
 	  
 	}}
 	sort = {true}
-	height= '400px'
+	height= '350px'
 	style={{
 	  container: {
 		margin: "5px"

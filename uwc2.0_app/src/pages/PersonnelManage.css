@@ -342,3 +342,8 @@ th.gridjs-th:last-child {
   margin:auto;
   width: 80vw
 }
+.PersonnelManage button {
+  background-color: white;
+  border-style: none;
+  color: black;
+}

@@ -411,7 +411,7 @@ function CreateTask() {
               "font-size": "1.5em",
               'font-weight': '600'	
 					  }}
-            onClick= {() => alert('New task created !')}
+            onClick= {() => alert('Đã tạo công việc mới !')}
           >
             Xác nhận
           </button>	
