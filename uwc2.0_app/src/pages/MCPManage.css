@@ -1,5 +1,71 @@
 .MCPManage{
     background-color: var(--bg_gray);
     width: 86.2vw;
-    height: 89.9vh;
+    height: 87vh;
+    display: flex;
+
 }
+.MCPtable {
+    background-color: white;
+    width: 60vw;
+    height: 80vh;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-color: var(--border_gray);
+    border-radius: 5px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+
+}
+.header1 {
+    padding: 0.5em 0.5em;
+    font-weight: 650;
+    font-size: 15px;
+}
+.MCPtable div:last-child {
+    padding: 0.3em 0.5em;
+    font-weight: 650;
+    font-size: 15px;
+}
+.MCPtable button {
+    background-color: white;
+    border-style: none;
+    color: black;
+}
+
+.DetailinformationMCP { 
+    visibility: visible;
+    background-color: white;
+    position: absolute;
+    
+    margin-top: 1.3%;
+    width: 20vw;
+    height: 60vh;
+    border-color: var(--border_gray);
+    border-radius: 5px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+}
+.DetailinformationMCP div:first-child {
+    margin-left: 2%;
+    padding: 0.5em 0.5em;
+    font-weight: 650;
+    font-size: 30px;
+}
+.DetailinformationMCP div:nth-child(3) {
+    margin-left: 7%;
+    padding: 0.7em 0.5em;
+    font-weight: 650;
+    font-size: 20px;
+    line-height: 1.5;
+}
+.DetailinformationMCP div:nth-child(4) {
+    margin-left: 7%;
+    padding: 0.7em 0.5em;
+    font-weight: 650;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
