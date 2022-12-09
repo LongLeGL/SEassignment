@@ -30,7 +30,7 @@ function WelcomeClock(props) {
     
     return (
         <div>
-            <div className='UpbarWelcome'>{welcomemsg} {props.userName} !</div>
+            <div className='UpbarWelcome'>{welcomemsg}, {props.userName}!</div>
             <div className='UpbarClock'>{date} | {time}</div>
         </div>
     );

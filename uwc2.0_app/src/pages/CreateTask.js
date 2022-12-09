@@ -243,13 +243,13 @@ function CreateTask() {
 							<Stack spacing={3}>
 
 								<DateTimePicker
-									label="Date&Time start task"
+									label="Ngày, giờ bắt đầu"
 									value={value}
 									onChange={handleChange}
 									renderInput={(params) => <TextField {...params} />}
 								/>
 								<DateTimePicker
-									label="Date&Time end task"
+									label="Ngày, giờ kết thúc"
 									value={timeEnd}
 									onChange={handleTimeEnd}
 									renderInput={(params) => <TextField {...params} />}
@@ -377,28 +377,7 @@ function CreateTask() {
             <div className="MyRouteSelectionHeader">
               <h3> Tạo tuyến đường </h3>
             </div>
-            <div className="MyRouteSelection">
-              <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="demo-simple-select-autowidth-label">
-                  Điểm tập kết
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-autowidth-label"
-                  id="demo-simple-select-autowidth"
-                  value={legend}
-                  onChange={handleChangeMapLegend}
-                  autoWidth
-                  label="Legend"
-                >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={10}>Twenty</MenuItem>
-                  <MenuItem value={21}>Twenty one</MenuItem>
-                  <MenuItem value={22}>Twenty one and a half</MenuItem>
-                </Select>
-              </FormControl>
-            </div>
+            
           </Grid>
         </Grid>
 		<Grid item xs={6} md={12}>
