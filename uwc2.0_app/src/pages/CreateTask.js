@@ -404,12 +404,17 @@ function CreateTask() {
 		<Grid item xs={6} md={12}>
 			<Link to="/Home">
 				<Item>
-            		<button style={{
-						'background-color':"white",
-						'color':'black',
-						"font-size": "1.5em",
-						'font-weight': '600'	
-					}}>Xác nhận</button>	
+          <button 
+            style={{
+              'background-color':"white",
+              'color':'black',
+              "font-size": "1.5em",
+              'font-weight': '600'	
+					  }}
+            onClick= {() => alert('New task created !')}
+          >
+            Xác nhận
+          </button>	
 				</Item>
 			</Link>
 		</Grid>
