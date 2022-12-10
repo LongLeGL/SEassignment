@@ -26,9 +26,11 @@ import { Button, requirePropFactory } from "@mui/material";
 
 // imports for Leaflet and React-Leaflet
 import marker from '../img/marker.png';
-import L from "leaflet";
-import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
 
+import L, { map } from 'leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
+import 'leaflet-routing-machine';
+import Map from '../components/Map';
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: "center",
@@ -36,7 +38,8 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const bachKhoaLat = 10.773202;
 const bachKhoaLong = 106.659764;
-
+var old_lat = 10.773202;
+var old_lng= 106.659764;
 const markerIcon = new L.icon({
   iconUrl: require('../img/marker.png'),
   iconSize: [40, 40],
@@ -186,7 +189,7 @@ function CreateTask() {
 			photo: "troller1.png"
 		},
 	]
-	const [destination, setDestination] = React.useState([])
+	// const [destination, setDestination] = React.useState([])
 	const listNhanVien = data.map((item) =>
 		<MenuItem key={item.ID} value={item.ID}>{item.ID}</MenuItem>
 	)
@@ -229,18 +232,19 @@ function CreateTask() {
 
 	console.log(Array.from(nhanVien)[0])
 
+	console.log(L)
 
 	React.useEffect(() => {
 		setPhuongTien('');
 	}, [nhanVien])
-	function Routing() {
+	function Routing(x,y) {
 		const map = useMap();
 	  
 		React.useEffect(() => {
 		  if (!map) return;
-			
+	  
 		  const routingControl = L.Routing.control({
-			waypoints: [L.latLng(10.772093436939588, 106.6578857044717), L.latLng(destination[0], destination[1])],
+			waypoints: [L.latLng(10.772093436939588, 106.6578857044717), L.latLng(x, y)],
 		  lineOptions: {
 			styles: [{color: "#638aa7",weight: 4}]
 		  },
@@ -256,6 +260,8 @@ function CreateTask() {
 	  }
   return (
     <>
+	<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
       <div className="CreateTask">
 	  <Box sx={{ flexGrow: 1 }}>
 				<Grid container spacing={3} >
@@ -352,48 +358,7 @@ function CreateTask() {
 		</Box >
 		<Grid container spacing={3}>
           <Grid item xs={8}>
-            <MapContainer
-              center={[bachKhoaLat, bachKhoaLong]}
-              zoom={13}
-              scrollWheelZoom={false}
-            >
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              />
-              <Marker 
-                position={[10.773202, 106.659764]}
-                icon={markerIcon}
-                eventHandlers={{
-                  click: (e) => {
-                    console.log('marker clicked', e)
-                  },
-                }}
-              >
-                <Popup>
-                  <p>Trụ sở chính</p>
-                </Popup>
-              </Marker>
-              {mapLegendData.map((mcp, idx) => (
-                 <Marker
-                 position={[mcp.latitude, mcp.longitude]}
-                 icon={markerIcon}
-                 key={idx}
-                 eventHandlers={{
-                  click: (e) => {
-                    console.log('marker clicked', e)
-                  },
-                }}
-               >
-                 <Popup>
-                   <b>
-                     {mcp.ID}, {mcp.mcpName}
-                   </b>
-                 </Popup>
-               </Marker>
-              ))};
-			  <Routing/>
-            </MapContainer>
+			  	<Map/>
           </Grid>
           <Grid item xs={4}>
             <div className="MyRouteSelectionHeader">
