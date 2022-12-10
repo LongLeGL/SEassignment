@@ -8,7 +8,7 @@ import {
 } from "react-leaflet"
 import L from "leaflet"
 import "./Map.css"
-const center = [10.773202, 106.659764]
+const center = [10.827576, 106.67681]
 var old_lat;
 var old_lng;
 const Map = () => {
@@ -82,7 +82,7 @@ const Map = () => {
   return (
     <div>
       <MapContainer 
-        zoom={20}
+        zoom={12}
         center = {center}   
         style={{width: '51vw', height: '60vh'}}
       >
