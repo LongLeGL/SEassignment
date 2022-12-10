@@ -64,7 +64,7 @@ const Map = () => {
     const routingControl = L.Routing.control({
       waypoints: [L.latLng(old_lat, old_lng), L.latLng(destination[0], destination[1])],
     lineOptions: {
-      styles: [{color: "#638aa7",weight: 4}]
+      styles: [{color: "#Ff0024",weight: 4}]
     },
     routeWhileDragging: false,
     addWaypoints: false,
