@@ -13,22 +13,16 @@ import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
-import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
-import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { Button, requirePropFactory } from "@mui/material";
 
 // imports for Leaflet and React-Leaflet
-import marker from '../img/marker.png';
 
-import L, { map } from 'leaflet';
-import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
+import L from 'leaflet';
 import 'leaflet-routing-machine';
 import Map from '../components/Map';
 const Item = styled(Paper)(({ theme }) => ({
@@ -36,57 +30,9 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
 }));
 
-const bachKhoaLat = 10.773202;
-const bachKhoaLong = 106.659764;
-var old_lat = 10.773202;
-var old_lng= 106.659764;
-const markerIcon = new L.icon({
-  iconUrl: require('../img/marker.png'),
-  iconSize: [40, 40],
-  iconAnchor: [17, 46], //[left/right, top/bottom]
-  popupAnchor: [0, -46], //[left/right, top/bottom]
-})
 
 function CreateTask() {
-
-  const [legend, setLegend] = React.useState("");
-
-  const handleChangeMapLegend = (event) => {
-    setLegend(event.target.value);
-  };
-
-  const mapLegendData = [
-    {
-      // psycho ex lives here
-      ID: "MCP001",
-      mcpName: "MCP Phú Nhuận",
-      latitude: 10.793778,
-      longitude: 106.684757,
-    },
-    {
-      // y khoa pnt, another psycho ex studies here lel
-      ID: "MCP002",
-      mcpName: "MCP quận 10",
-      latitude: 10.827576,
-      longitude: 106.67681,
-    },
-    {
-      // thpt gia dinh lol
-      ID: "MCP003",
-      mcpName: "MCP Bình Thạnh",
-      latitude: 10.804235,
-      longitude: 106.71847,
-    },
-    {
-      // the another ex lives here
-      ID: "MCP004",
-      mcpName: "MCP Tân Phú",
-      latitude: 10.792276,
-      longitude: 106.619079,
-    },
-  ];
   const [value, setValue] = React.useState(dayjs('2022-12-9T14:11:54'));
-
 
 	const handleChange = (newValue) => {
 		setValue(newValue);
@@ -237,27 +183,7 @@ function CreateTask() {
 	React.useEffect(() => {
 		setPhuongTien('');
 	}, [nhanVien])
-	function Routing(x,y) {
-		const map = useMap();
-	  
-		React.useEffect(() => {
-		  if (!map) return;
-	  
-		  const routingControl = L.Routing.control({
-			waypoints: [L.latLng(10.772093436939588, 106.6578857044717), L.latLng(x, y)],
-		  lineOptions: {
-			styles: [{color: "#638aa7",weight: 4}]
-		  },
-		  routeWhileDragging: false,
-		  addWaypoints: false,
-		  draggableWaypoints: false,
-		  }).addTo(map);
-	  
-		  return () => map.removeControl(routingControl);
-		}, [map]);
-	  
-		return null;
-	  }
+	
   return (
     <>
 	<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
@@ -359,12 +285,6 @@ function CreateTask() {
 		<Grid container spacing={3}>
           <Grid item xs={8}>
 			  	<Map/>
-          </Grid>
-          <Grid item xs={4}>
-            <div className="MyRouteSelectionHeader">
-              <h3> Tạo tuyến đường </h3>
-            </div>
-            
           </Grid>
         </Grid>
 		<Grid item xs={6} md={12}>

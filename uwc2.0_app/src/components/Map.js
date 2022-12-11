@@ -16,6 +16,8 @@ const Map = () => {
     // const[current, setCurrentpoint] = useState([])
     
   const [destination ,setDestination] = useState([])
+  const [clearFlag, setClearFlag] = useState(0);
+
   const mcps = [
     {
       ID: "MCP001",
@@ -55,7 +57,7 @@ const Map = () => {
   }
   
 //   handleChangeOld([10.772093436939588, 106.6578857044717]);
-  function Routing() {
+function Routing() {
   const map = useMap();
   
   useEffect(() => {
@@ -72,19 +74,19 @@ const Map = () => {
     }).addTo(map);
     old_lat = destination[0];
     old_lng = destination[1];
-    // handleChangeOld(current);
-    // return () => map.removeControl(routingControl);
+
   }, [map]);
 
   return null;
 }
 
   return (
-    <div>
+    <div className='routableMap'>
       <MapContainer 
+        key={clearFlag}
         zoom={12}
         center = {center}   
-        style={{width: '51vw', height: '60vh'}}
+        style={{width: '60vw', height: '60vh'}}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -104,6 +106,13 @@ const Map = () => {
         
           <Routing />
       </MapContainer>
+      <button className='routingMapReset' onClick={() => {
+        setClearFlag(clearFlag+1);
+        old_lat = null;
+        old_lng = null;
+        setDestination([]);
+      }}
+      >Reset</button>
     </div>
   )
 }
