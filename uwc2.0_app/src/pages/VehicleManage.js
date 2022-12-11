@@ -20,18 +20,18 @@ function VehicleManage() {
     
     {
       ID: "#T017",
-      type: "HUYNDAI",
-      price:"570 triệu đồng",
+      type: "ChinDoq",
+      price:"550 triệu đồng",
     },
     {
       ID: "#T013",
       type: "HUYNDAI",
-      price:"570 triệu đồng",
+      price:"560 triệu đồng",
     },
     {
       ID: "#T019",
-      type: "HUYNDAI",
-      price:"570 triệu đồng",
+      type: "HONDA",
+      price:"670 triệu đồng",
     },
     {
       ID: "#T021",
@@ -41,7 +41,7 @@ function VehicleManage() {
     {
       ID: "#T035",
       type: "HUYNDAI",
-      price:"570 triệu đồng",
+      price:"500 triệu đồng",
     },
     {
       ID: "#T077",
@@ -71,12 +71,12 @@ function VehicleManage() {
     {
       ID: "#S01234",
       type: "HONDA",
-      price:"100 triệu đồng",
+      price:"90 triệu đồng",
     },
     {
       ID: "#S12310",
-      type: "HONDA",
-      price:"100 triệu đồng",
+      type: "SUZUKI",
+      price:"50 triệu đồng",
     },
   ]
   const foundtype = function () {
